@@ -30,4 +30,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  app_title: "PC Builder"
+  app_description: "Create your very own computer for free!"
   hello: "Hello world"
