@@ -13,3 +13,13 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+@import "vars";
+@import "footer";
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+//Setting the font for all text to be Roboto from google apis
+* {
+  font-family: "Roboto", sans-serif;
+}

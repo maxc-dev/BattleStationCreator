@@ -1,0 +1,33 @@
+%footer.footer-distributed
+  .footer-left
+    %h3
+      = t('app_title')
+    %p.footer-company-about
+      = t('app_description')
+
+  .footer-center
+    %div
+      %i.fa.fa-map-marker
+      %p
+        = t('_footer.address')
+        %br
+        = t('_footer.country')
+    %div
+      %i.fa.fa-envelope
+      %p
+        %a{:href => "mailto:support@company.com"}
+          = t('_footer.contact')
+
+  .footer-right
+    %p.footer-company-about
+      %span
+        = t('_footer.author-about')
+
+      = t('author')
+      &copy; #{Time.now.year}
+
+    .footer-icons
+      %a{:href => "https://www.linkedin.com/in/mxcr/"}
+        %i.fa.fa-linkedin
+      %a{:href => "https://github.com/maxc-dev"}
+        %i.fa.fa-github
