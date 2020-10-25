@@ -10,6 +10,9 @@ header {
   padding: 20px 10px;
   position: fixed;
   top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header-distributed {
@@ -28,7 +31,9 @@ header {
   }
 
   div.header-nav {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     a {
       text-align: center;
