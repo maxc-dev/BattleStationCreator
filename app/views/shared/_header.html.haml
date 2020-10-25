@@ -1,10 +1,8 @@
-%header.header-distributed{class: "header"}
+%header.header-distributed{class: "header", id: "header"}
   :javascript
+    let colourNodeHeader = addColourCycleNode('#header', 'header')
     $(document).ready(function() {
-      $(this).click(function(event){
-        //alert('You clicked the Hide link');
-        //event.preventDefault();
-      });
+      addColourHoverListener(colourNodeHeader)
     })
 
     window.onscroll = function() {stickHeader()};
@@ -18,9 +16,9 @@
     // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
     function stickHeader() {
       if (window.pageYOffset > sticky) {
-        header.classList.add("sticky");
+        header.classList.add("sticky-head");
       } else {
-        header.classList.remove("sticky");
+        header.classList.remove("sticky-head");
       }
     }
 

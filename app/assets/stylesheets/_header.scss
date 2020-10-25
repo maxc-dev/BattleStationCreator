@@ -24,7 +24,7 @@ header {
   h1 {
     text-align: center;
     color: $text-colour;
-    font: bold 36px 'Roboto';
+    font-size: 48px;
   }
 
   div.header-nav {
@@ -33,7 +33,7 @@ header {
     a {
       text-align: center;
       color: $text-colour;
-      font: 24px 'Roboto';
+      font-size: 24px;
       padding: 12px;
       text-decoration: none;
       line-height: 25px;
