@@ -36,7 +36,10 @@ en:
 
   #header info
   _header:
-    nav-home: "Home"
+    nav-products: "Products"
+    nav-customise: "Customise"
+    nav-gallery: "Gallery"
+    nav-support: "Support"
 
   #footer info
   _footer:

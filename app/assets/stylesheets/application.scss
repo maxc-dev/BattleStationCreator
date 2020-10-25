@@ -16,10 +16,34 @@
 
 @import "vars";
 @import "footer";
+@import "header";
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 //Setting the font for all text to be Roboto from google apis
 * {
   font-family: "Roboto", sans-serif;
+}
+
+
+.header {
+  padding: 10px 16px;
+}
+
+/* Page content */
+.content {
+  margin-top: $header-size;
+  padding: 16px;
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 102px;
 }

@@ -1,2 +1,38 @@
-%header
-  %h1 Welcome to my shop
+%header.header-distributed{class: "header"}
+  :javascript
+    $(document).ready(function() {
+      $(this).click(function(event){
+        //alert('You clicked the Hide link');
+        //event.preventDefault();
+      });
+    })
+
+    window.onscroll = function() {stickHeader()};
+
+    // Get the header
+    var header = document.getElementById("header");
+
+    // Get the offset position of the navbar
+    var sticky = header.offsetTop;
+
+    // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    function stickHeader() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+
+  %h1
+    = t('app_title')
+
+  %div.header-nav
+    %a
+      = t('_header.nav-products')
+    %a
+      = t('_header.nav-customise')
+    %a
+      = t('_header.nav-gallery')
+    %a
+      = t('_header.nav-support')
