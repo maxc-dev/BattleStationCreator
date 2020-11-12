@@ -1,0 +1,16 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @category.name
+%p
+  %b Abbrv:
+  = @category.abbrv
+%p
+  %b Description:
+  = @category.description
+%p
+  %b Compulsory:
+  = @category.compulsory
+
+= link_to 'Back', categories_path

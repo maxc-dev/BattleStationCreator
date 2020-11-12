@@ -1,0 +1,17 @@
+%h1 Computer Parts
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Abbrv
+      %th Description
+      %th Compulsory
+
+  %tbody
+    - @categories.each do |category|
+      %tr
+        %td= category.name
+        %td= category.abbrv
+        %td= category.description
+        %td= link_to 'Show', category

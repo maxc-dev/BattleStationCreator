@@ -36,6 +36,7 @@ header {
     align-items: center;
 
     a {
+      cursor: pointer;
       text-align: center;
       color: $text-colour;
       font-size: 24px;
@@ -46,6 +47,7 @@ header {
 
       a:hover {
         background-color: $back-hover-colour;
+        opacity: 50;
         color: black;
 
       }
