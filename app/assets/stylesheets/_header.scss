@@ -28,6 +28,10 @@ header {
     text-align: center;
     color: $text-colour;
     font-size: 48px;
+    a {
+      color: $text-colour;
+      text-decoration: none;
+    }
   }
 
   div.header-nav {

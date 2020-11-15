@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resources :manufacturers
   resources :categories
-  #resources :parts
-  root 'home#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'home#home', as: 'home_index'
+
+  get 'categories', to: 'categories#show', as: 'parts_index'
+  get 'manufacturers', to: 'manufacturers#show', as: 'manufacturers_index'
 end

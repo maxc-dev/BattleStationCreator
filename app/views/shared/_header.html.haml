@@ -23,13 +23,13 @@
     }
 
   %h1
-    %a{href: '#home'}
-    = t('app_title')
+    %a{:href => home_index_path }
+      = t('app_title')
 
   %div.header-nav
-    %a
+    %a{:href => categories_path }
       = t('_header.nav-parts')
-    %a
+    %a{:href => manufacturers_path }
       = t('_header.nav-manufacturers')
     %a
       = t('_header.nav-customise')
