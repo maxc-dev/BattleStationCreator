@@ -60,3 +60,35 @@ Category.create(
     }
   ]
 )
+
+Manufacturer.create(
+  [
+    {
+      name: 'NVIDIA'
+    },
+    {
+      name: 'Asus'
+    },
+    {
+      name: 'Gigabyte'
+    },
+    {
+      name: 'Intel'
+    },
+    {
+      name: 'AMD'
+    },
+    {
+      name: 'MSI'
+    },
+    {
+      name: 'Corsair'
+    },
+    {
+      name: 'Lian Li'
+    },
+    {
+      name: 'Cooler Master'
+    }
+  ]
+)
