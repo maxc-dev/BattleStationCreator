@@ -36,18 +36,12 @@ en:
 
   #header info
   _header:
-    nav-products: "Products"
+    nav-parts: "Parts"
     nav-customise: "Customise"
+    nav-manufacturers: "Manufacturers"
     nav-gallery: "Gallery"
     nav-support: "Support"
 
   #footer info
   _footer:
-    sign-off: "Established 2020"
-    nav-spacing: " · "
-
-    address: "University of Surrey"
-    country: "United Kingdom, Guildford"
-    contact: "maxc.helpme@gmail.com"
-
-    author-about: "Author"
+    start-building: "Start Building"

@@ -17,6 +17,7 @@
 //= require turbolinks
 //= require_tree .
 
+/*
 function colourCycle(element, id) {
     const elementById = document.getElementById(id)
     $(element).hover(
@@ -41,4 +42,4 @@ function colourCycle(element, id) {
         }
     )
 
-}
+}*/
