@@ -1,16 +1,9 @@
 %h1 Part Manufacturers
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th
-      %th
-      %th
-
-  %tbody
+%div.container
+  %div.layout-grid
     - @manufacturers.each do |manufacturer|
-      %tr
-        %td= manufacturer.name
-        %td= link_to 'Show', manufacturer
-
+      %div.child
+        %h2= manufacturer.name
+        %br
+        = link_to 'More Info', manufacturer

@@ -1,21 +1,13 @@
 %h1 Listing parts
 
-%table
-  %thead
-    %tr
-      %th Type
-      %th
-      %th
-      %th
-
-  %tbody
+%div.container
+  %div.layout-grid
     - @parts.each do |part|
-      %tr
-        %td= part.type
-        %td= link_to 'Show', part
-        %td= link_to 'Edit', edit_part_path(part)
-        %td= link_to 'Destroy', part, method: :delete, data: { confirm: 'Are you sure?' }
-
+      %div.child
+        = part.type
+        %br
+        = link_to 'More Info', part
 %br
 
 = link_to 'New Part', new_part_path
+

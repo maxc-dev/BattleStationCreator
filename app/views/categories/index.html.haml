@@ -1,17 +1,11 @@
 %h1 Computer Parts
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Abbrv
-      %th Description
-      %th Compulsory
-
-  %tbody
+%div.container
+  %div.layout-grid
     - @categories.each do |category|
-      %tr
-        %td= category.name
-        %td= category.abbrv
-        %td= category.description
-        %td= link_to 'Show', category
+      %div.child
+        %h2= category.name
+        %p= category.abbrv
+        %p= category.description
+        %br
+        = link_to 'More Info', category
