@@ -4,8 +4,9 @@
   %div.layout-grid
     - @parts.each do |part|
       %div.child
+        %div.centered-img-container
+          %img{src: "/assets/products/" + part.name.downcase.gsub(' ', '-') + ".jpg", image_alt: 'manufacturer'}
         %h2= part.name
-        %h2= "£%d" % [part.price]
-        %br
+        %h3= "£%d" % [part.price]
 
 = link_to 'Back to Parts', categories_path

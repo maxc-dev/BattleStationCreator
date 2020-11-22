@@ -18,7 +18,7 @@
 //= require_tree .
 
 function updateProgressBar() {
-    var elem = document.getElementById("myBar");
+    var elem = document.getElementById("part-selection-bar");
     var width = 20;
     var id = setInterval(frame, 10);
     function frame() {

@@ -4,7 +4,7 @@
   %div.layout-grid
     - @manufacturers.each do |manufacturer|
       %div.child
-        %img{src: "/assets/logos/logo-" + manufacturer.name.downcase.gsub(' ', '-') + ".jpg", image_alt: 'manufacturer'}
+        = link_to parts_url(:manufacturer_id => manufacturer.id - 1) do
+          %div.centered-img-container
+            %img{src: "/assets/logos/logo-" + manufacturer.name.downcase.gsub(' ', '-') + ".jpg", image_alt: 'manufacturer'}
         %h2= manufacturer.name
-        %br
-        = link_to 'Show Products', parts_url(:manufacturer_id => manufacturer.id - 1)
