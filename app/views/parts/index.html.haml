@@ -4,10 +4,8 @@
   %div.layout-grid
     - @parts.each do |part|
       %div.child
-        = part.type
+        %h2= part.name
+        %h2= "£%d" % [part.price]
         %br
-        = link_to 'More Info', part
-%br
 
 = link_to 'New Part', new_part_path
-

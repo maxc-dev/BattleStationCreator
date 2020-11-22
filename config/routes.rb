@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  resources :parts
   resources :manufacturers
   resources :categories
-  resources :parts
   root 'home#home', as: 'home_index'
 
   get 'categories', to: 'categories#show', as: 'parts_index'

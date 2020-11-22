@@ -1,8 +1,14 @@
 %p#notice= notice
 
 %p
-  %b Type:
-  = @part.type
+  %b Name:
+  = @part.name
+%p
+  %b Price:
+  = @part.price
+%p
+  %b Power:
+  = @part.power
 
 = link_to 'Edit', edit_part_path(@part)
 \|

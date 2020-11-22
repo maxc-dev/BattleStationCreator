@@ -64,31 +64,134 @@ Category.create(
 Manufacturer.create(
   [
     {
-      name: 'NVIDIA'
+      name: 'NVIDIA' # 0
     },
     {
-      name: 'Asus'
+      name: 'Asus' # 1
     },
     {
-      name: 'Gigabyte'
+      name: 'Gigabyte' # 2
     },
     {
-      name: 'Intel'
+      name: 'Intel' # 3
     },
     {
-      name: 'AMD'
+      name: 'AMD' # 4
     },
     {
-      name: 'MSI'
+      name: 'MSI' # 5
     },
     {
-      name: 'Corsair'
+      name: 'Corsair' # 6
     },
     {
-      name: 'Lian Li'
+      name: 'Lian Li' # 7
     },
     {
-      name: 'Cooler Master'
+      name: 'Cooler Master' # 8
+    }
+  ]
+)
+
+Part.create(
+  [ # processors - intel
+    {
+      category_id: 1,
+      manufacturer_id: 3,
+      name: 'i5 10500',
+      price: 183.99,
+      power: 85
+    },
+    {
+      category_id: 1,
+      manufacturer_id: 3,
+      name: 'i5 9500',
+      price: 179.99,
+      power: 85
+    },
+    {
+      category_id: 1,
+      manufacturer_id: 3,
+      name: 'i5 8500',
+      price: 173.99,
+      power: 85
+    },
+    {
+      category_id: 1,
+      manufacturer_id: 3,
+      name: 'i7 10700',
+      price: 283.99,
+      power: 95
+    },
+    {
+      category_id: 1,
+      manufacturer_id: 3,
+      name: 'i7 9700',
+      price: 279.99,
+      power: 95
+    },
+    {
+      category_id: 1,
+      manufacturer_id: 3,
+      name: 'i7 9700K',
+      price: 283.99,
+      power: 95
+    },
+    {
+      category_id: 1,
+      manufacturer_id: 3,
+      name: 'i7 8700',
+      price: 273.99,
+      power: 95
+    },
+    {
+      category_id: 1,
+      manufacturer_id: 3,
+      name: 'i9 10900',
+      price: 424.99,
+      power: 105
+    },
+    {
+      category_id: 1,
+      manufacturer_id: 3,
+      name: 'i9 9900',
+      price: 319.99,
+      power: 105
+    },
+    {
+      category_id: 1,
+      manufacturer_id: 3,
+      name: 'i9 9900K',
+      price: 339.99,
+      power: 105
+    },                      # processors - amd
+    {
+      category_id: 1,
+      manufacturer_id: 4,
+      name: 'Ryzen 5 5600X',
+      price: 269.99,
+      power: 65
+    },
+    {
+      category_id: 1,
+      manufacturer_id: 4,
+      name: 'Ryzen 7 5800X',
+      price: 399.99,
+      power: 105
+    },
+    {
+      category_id: 1,
+      manufacturer_id: 4,
+      name: 'Ryzen 5 5900X',
+      price: 499.99,
+      power: 105
+    },
+    {
+      category_id: 1,
+      manufacturer_id: 4,
+      name: 'Ryzen 7 5950X',
+      price: 699.99,
+      power: 105
     }
   ]
 )
