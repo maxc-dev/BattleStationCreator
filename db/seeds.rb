@@ -21,21 +21,9 @@ Category.create(
       description: 'Processes the graphics and outputs it on your display.'
     },
     {
-      name: 'Motherboard',
-      description: 'Connects all the components of a computer together.'
-    },
-    {
       name: 'Memory',
       abbrv: 'RAM',
       description: 'Holds random data which the computer needs to perform calculations.'
-    },
-    {
-      name: 'CPU Cooler',
-      description: 'Cools the processor using water or air.'
-    },
-    {
-      name: 'Case',
-      description: 'Holds the build together.'
     },
     {
       name: 'Power Supply',
@@ -48,15 +36,27 @@ Category.create(
       description: 'Stores all the data about your computer.'
     },
     {
-      name: 'Fans',
-      description: 'Additional fans to control the air flow in your case.',
-      compulsory: false
-    },
-    {
       name: 'Lighting',
       abbrv: 'RGB',
       description: 'Additional RGB lighting components.',
       compulsory: false
+    },
+    {
+        name: 'Motherboard',
+        description: 'Connects all the components of a computer together.'
+    },
+    {
+        name: 'Fans',
+        description: 'Additional fans to control the air flow in your case.',
+        compulsory: false
+    },
+    {
+        name: 'CPU Cooler',
+        description: 'Cools the processor using water or air.'
+    },
+    {
+        name: 'Case',
+        description: 'Holds the build together.'
     }
   ]
 )

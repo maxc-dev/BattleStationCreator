@@ -17,29 +17,17 @@
 //= require turbolinks
 //= require_tree .
 
-/*
-function colourCycle(element, id) {
-    const elementById = document.getElementById(id)
-    $(element).hover(
-        function changeColor(){
-            for (let i = 0; i < rgb.length; i++) {
-                if (up[i]) {
-                    rgb[i]++;
-                } else {
-                    rgb[i]--;
-                }
-                if (rgb[i] >= 256) {
-                    up[i] = false
-                } else if (rgb[i] <= 0) {
-                    up[i] = true
-                }
-            }
-
-            elementById.style.backgroundColor = "rgb(" + rgb[0] + "," + rgb[1] + "," + rgb[2] + ")"
-            if ($(element).is(":hover")) {
-                setTimeout(function(){changeColor()}, 10);
-            }
+function updateProgressBar() {
+    var elem = document.getElementById("myBar");
+    var width = 20;
+    var id = setInterval(frame, 10);
+    function frame() {
+        if (width >= 100) {
+            clearInterval(id);
+        } else {
+            width++;
+            elem.style.width = width + '%';
+            elem.innerHTML = width  + '%';
         }
-    )
-
-}*/
+    }
+}

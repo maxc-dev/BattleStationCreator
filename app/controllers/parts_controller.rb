@@ -1,16 +1,25 @@
+# frozen_string_literal: true
+
 class PartsController < ApplicationController
-  before_action :set_part, only: [:show, :edit, :update, :destroy]
+  before_action :set_part, only: %i[show edit update destroy]
 
   # GET /parts
   # GET /parts.json
   def index
-    @parts = Part.all
+    @parts = if params[:category_id].present? && params[:manufacturer_id].present?
+               Part.all.where('category_id = ? & manufacturer_id = ?', params[:category_id], params[:manufacturer_id])
+             elsif params[:category_id].present?
+               Part.all.where('category_id = ?', params[:category_id])
+             elsif params[:manufacturer_id].present?
+               Part.all.where('manufacturer_id = ?', params[:manufacturer_id])
+             else
+               Part.all
+             end
   end
 
   # GET /parts/1
   # GET /parts/1.json
-  def show
-  end
+  def show; end
 
   # GET /parts/new
   def new
@@ -18,8 +27,7 @@ class PartsController < ApplicationController
   end
 
   # GET /parts/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /parts
   # POST /parts.json
@@ -62,13 +70,14 @@ class PartsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_part
-      @part = Part.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def part_params
-      params.require(:part).permit(:name, :price, :power)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_part
+    @part = Part.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def part_params
+    params.require(:part).permit(:name, :price, :power)
+  end
 end

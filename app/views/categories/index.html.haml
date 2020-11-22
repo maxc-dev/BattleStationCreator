@@ -1,12 +1,17 @@
 %h1 Computer Parts
 
+%div.w3-light-grey.w3-round-large.container-scroll
+  %div.w3-container.w3-blue.w3-round-large{style:'width:25%;'}
+    25%
+
 %div.container
   %div.layout-grid
     - @categories.each do |category|
       %div.child
-        %img{src: "/assets/thumbnails/" + category.name.downcase.gsub(' ', '-') + ".jpg", image_alt: 'parts'}
+        = link_to parts_url(:category_id => category.id) do
+          %div.centered-img-container
+            %img{src: "/assets/thumbnails/" + category.name.downcase.gsub(' ', '-') + ".jpg", image_alt: 'parts', id: 'dim-image'}
+            %div.centered-img-text
+              Select
         %h2= category.name
-        %p= category.abbrv
         %p= category.description
-        %br
-        = link_to 'More Info', category

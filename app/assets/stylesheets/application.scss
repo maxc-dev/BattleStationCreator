@@ -19,6 +19,7 @@
 @import "header";
 
 @import url('https://fonts.googleapis.com/css?family=Play');
+@import url('https://www.w3schools.com/w3css/4/w3.css');
 
 //Setting the font for all text to be Roboto from google apis
 * {
@@ -129,4 +130,38 @@ $shadow: 5px;
 
 .child:hover {
   background: $back-hover-colour;
+}
+
+img {
+  border-radius: 8px;
+  width: 380px;
+  max-width: 100%;
+  height: auto;
+}
+
+#dim-image {
+  opacity: 0.2;
+  transition: transform .5s;
+}
+
+.centered-img-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+}
+
+.centered-img-container {
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+
+.container-scroll {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  margin-left: 17%;
+  margin-right: 17%;
 }
