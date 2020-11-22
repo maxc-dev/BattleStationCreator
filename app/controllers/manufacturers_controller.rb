@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ManufacturersController < ApplicationController
   before_action :set_manufacturer, only: [:show]
 
@@ -9,8 +11,7 @@ class ManufacturersController < ApplicationController
 
   # GET /manufacturers/1
   # GET /manufacturers/1.json
-  def show
-  end
+  def show; end
 
   # POST /manufacturers
   # POST /manufacturers.json

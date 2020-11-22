@@ -4,6 +4,7 @@
   %div.layout-grid
     - @categories.each do |category|
       %div.child
+        %img{src: "/assets/thumbnails/" + category.name.downcase.gsub(' ', '-') + ".jpg", image_alt: 'parts'}
         %h2= category.name
         %p= category.abbrv
         %p= category.description
