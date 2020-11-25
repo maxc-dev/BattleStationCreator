@@ -134,9 +134,10 @@ $shadow: 5px;
 
 img {
   border-radius: 8px;
-  width: 380px;
-  max-width: 100%;
+  max-width: 380px;
   height: auto;
+  min-height: 200px;
+  max-height: 200px;
 }
 
 #dim-image {
