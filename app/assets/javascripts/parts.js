@@ -1,4 +1,6 @@
-$(document).on("click",".appDetails", function () {
-    let clickedImgID = $(this).attr('id');
-    alert('you clicked on button #' + clickedImgID);
-});
+function partSelected(clickedID) {
+    //clickedID will be the part name
+
+
+
+}

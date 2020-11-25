@@ -1,17 +1,26 @@
 %h1 Computer Parts
 
 %div.w3-light-grey.w3-round-large.container-scroll
-  %div.w3-container.w3-blue.w3-round-large{style:'width:25%;', id: 'part-selection-bar'}
-    25%
+  %div.w3-container.w3-blue.w3-round-large{style:'width:0%;', id: 'part-selection-bar'}
+    = "£%d" % [@progress]
 
 %div.container
   %div.layout-grid
     - @categories.each do |category|
       %div.child
-        = link_to parts_url(:category_id => category.id) do
-          %div.centered-img-container
-            %img{src: "/assets/thumbnails/" + category.name.downcase.gsub(' ', '-') + ".jpg", image_alt: 'parts', id: 'dim-image'}
-            %div.centered-img-text
-              Select
-        %h2= category.name
-        %p= category.description
+        - if session[category.id].present?
+          - part = Part.find(session[category.id])
+          = link_to parts_url(:category_id => category.id) do
+            %div.centered-img-container
+              %img{src: "/assets/products/#{part.name.downcase.gsub(' ', '-')}.jpg", image_alt: 'parts'}
+          %h2= part.name
+          %p= "£%d" % [part.price]
+
+        - else
+          = link_to parts_url(:category_id => category.id) do
+            %div.centered-img-container
+              %img{src: "/assets/thumbnails/#{category.name.downcase.gsub(' ', '-')}.jpg", image_alt: 'parts', id: 'dim-image'}
+              %div.centered-img-text
+                Select
+          %h2= category.name
+          %p= category.description

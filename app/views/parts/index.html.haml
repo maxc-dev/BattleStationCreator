@@ -4,11 +4,12 @@
   %div.layout-grid
     - @parts.each do |part|
       %div.child
-        %div.centered-img-container
-          - image = Category.where(['id = ?', part.category_id])[0].name.downcase
-          - manufacturer = Manufacturer.where(['id = ?', part.manufacturer_id + 1])[0].name
-          - part_img = part.name.downcase.gsub(' ', '-')
-          %img{:src => (FileTest.exist? Rails.root.join("app/assets/images/products/#{part_img}.jpg")) ? "/assets/products/#{part_img}.jpg" : "/assets/thumbnails/#{image}.jpg", image_alt: part_img, id: part_img}
+        - image = Category.where(['id = ?', part.category_id])[0].name.downcase
+        - manufacturer = Manufacturer.where(['id = ?', part.manufacturer_id + 1])[0].name
+        - part_img = part.name.downcase.gsub(' ', '-')
+        = link_to categories_url(:selected_category_id => part.category_id, :selected_part_id => part.id) do
+          %div.centered-img-container
+            %img{:src => (FileTest.exist? Rails.root.join("app/assets/images/products/#{part_img}.jpg")) ? "/assets/products/#{part_img}.jpg" : "/assets/thumbnails/#{image}.jpg", image_alt: part_img, id: part_img}
         %h2= "#{manufacturer} - #{part.name}"
         %h4= "£%d" % [part.price]
 
