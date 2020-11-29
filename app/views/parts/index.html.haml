@@ -12,5 +12,3 @@
             %img{:src => (FileTest.exist? Rails.root.join("app/assets/images/products/#{part_img}.jpg")) ? "/assets/products/#{part_img}.jpg" : "/assets/thumbnails/#{image}.jpg", image_alt: part_img, id: part_img}
         %h2= "#{manufacturer} - #{part.name}"
         %h4= "£%d" % [part.price]
-
-= link_to 'Back', :back

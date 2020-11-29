@@ -1,8 +1,8 @@
 %h1 Computer Parts
 
 %div.w3-light-grey.w3-round-large.container-scroll
-  %div.w3-container.w3-blue.w3-round-large{style:'width:0%;', id: 'part-selection-bar'}
-    = "£%d" % [@progress]
+  %div.w3-container.w3-blue.w3-round-large{id: 'part-selection-bar', :style => "width:#{@progress}%;"}
+    = "%d%%" % [@progress]
 
 %div.container
   %div.layout-grid

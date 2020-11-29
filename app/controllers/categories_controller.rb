@@ -5,10 +5,13 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all
-    @progress = 0
-
     if params[:selected_category_id].present?
       session[params[:selected_category_id].to_i] = params[:selected_part_id].to_i
+    end
+
+    @progress = 0
+    (1..10).each do |check_category|
+      @progress += 10 if session[check_category].present?
     end
   end
 
