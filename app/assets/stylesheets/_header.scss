@@ -1,5 +1,23 @@
 @import "vars";
 
+@media screen and (max-width: 600px) {
+  .header-nav-items {
+    font-size: 20px !important;
+  }
+  #header-text {
+    font-size: 36px !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header-nav-items {
+    font-size: 18px !important;
+  }
+  #header-text {
+    font-size: 30px !important;
+  }
+}
+
 .main {
   max-height: $header-size;
   line-height: $header-size;
@@ -54,9 +72,7 @@ header {
         background-color: $back-hover-colour;
         opacity: 50;
         color: black;
-
       }
-
     }
   }
 }

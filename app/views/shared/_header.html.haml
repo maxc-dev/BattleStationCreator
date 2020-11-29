@@ -22,14 +22,17 @@
       }
     }
 
-  %h1
+  %h1{id: 'header-text'}
     %a{:href => home_index_path }
       = t('app_title')
 
   %div.header-nav
     %a{:href => categories_path }
-      = t('_header.nav-parts')
+      %p{class: 'header-nav-items'}
+        = t('_header.nav-parts')
     %a{:href => manufacturers_path }
-      = t('_header.nav-manufacturers')
+      %p{class: 'header-nav-items'}
+        = t('_header.nav-manufacturers')
     %a
-      = t('_header.nav-support')
+      %p{class: 'header-nav-items'}
+        = t('_header.nav-support')

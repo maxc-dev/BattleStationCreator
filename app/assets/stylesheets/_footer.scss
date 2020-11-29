@@ -1,14 +1,14 @@
 @import "vars";
 
-@media only screen and (max-width: 1500px) {
-  #build-button {
-    font-size: 48px;
+@media only screen and (max-width: 600px) {
+  .build-text {
+    font-size: 48px !important;
   }
 }
 
-@media only screen and (max-width: 1000px) {
-  #build-button {
-    font-size: 24px;
+@media only screen and (max-width: 400px) {
+  .build-text {
+    font-size: 24px !important;
   }
 }
 
@@ -27,7 +27,6 @@ footer {
   justify-content: center !important;
   align-items: center !important;
   width: 100% !important;
-  font-size: 52px;
   text-align: center;
   padding: 10px;
   background-color: $rgb-base-colour;
@@ -54,5 +53,6 @@ footer {
 }
 
 .build-text {
+  font-size: 52px;
   color: $text-colour;
 }
