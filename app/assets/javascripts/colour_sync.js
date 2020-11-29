@@ -25,7 +25,6 @@ function addColourCycleNode(element, id) {
     return node
 }
 
-
 function addColourHoverListener(targetNode) {
     $(targetNode.getElement()).hover(
         function cycle() {
@@ -42,12 +41,14 @@ function addColourHoverListener(targetNode) {
                 }
             }
             for (let i = 0; i < nodes.length; i++) {
-                document.getElementById(nodes[i].getId()).style.backgroundColor = "rgb(" + rgb[0] + "," + rgb[1] + "," + rgb[2] + ")"
+                if (document.getElementById(nodes[i].getId()) != null) {
+                    document.getElementById(nodes[i].getId()).style.backgroundColor = "rgb(" + rgb[0] + "," + rgb[1] + "," + rgb[2] + ")"
+                }
             }
             if ($(targetNode.getElement()).is(":hover")) {
                 setTimeout(function () {
                     cycle()
-                }, 10);
+                }, 20);
             }
         }
     )

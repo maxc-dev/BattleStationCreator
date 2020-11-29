@@ -21,4 +21,7 @@
     %div{class: 'content'}
       = yield
 
-    = render 'shared/footer'
+    - if current_page?(controller: 'home', action: 'home')
+      = render 'shared/start_building'
+    - else
+      = render 'shared/footer'

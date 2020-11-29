@@ -1,0 +1,11 @@
+%footer.footer-distributed
+  :javascript
+    var colourNodeBuilder = addColourCycleNode('#build-button', 'build-button')
+    $(document).ready(function (){
+      addColourHoverListener(colourNodeBuilder)
+    })
+
+  %button{id: 'build-button'}
+    = link_to categories_url do
+      %p{class: 'build-text'}
+        = t('_footer.start-building')

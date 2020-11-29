@@ -1,9 +1,9 @@
-%footer.footer-distributed{id: 'footer'}
+%footer.footer-distributed
   :javascript
-    let colourNodeFooter = addColourCycleNode('#build-button', 'build-button')
+    var colourNodeFooter = addColourCycleNode('#footer-main', 'footer-main')
     $(document).ready(function (){
       addColourHoverListener(colourNodeFooter)
     })
 
-  %button{id: 'build-button'}
-    = t('_footer.start-building')
+  %p{id: 'footer-main'}
+    = "#{t('app_title')} | #{t('author')} | #{Time.current.year}"

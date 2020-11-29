@@ -1,21 +1,33 @@
 @import "vars";
 
+@media only screen and (max-width: 1500px) {
+  #build-button {
+    font-size: 48px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  #build-button {
+    font-size: 24px;
+  }
+}
+
 footer {
   max-height: $footer-size;
-  width: 100%;
-  position: fixed;
+  width: 100% !important;
+  position: fixed !important;
   bottom: 0;
-  display: flex;
+  display: flex !important;
   justify-content: center;
   align-items: center;
 }
 
 #build-button {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  font-size: 64px;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  font-size: 52px;
   text-align: center;
   padding: 10px;
   background-color: $rgb-base-colour;
@@ -24,4 +36,23 @@ footer {
   outline: none;
   margin-bottom: 0;
   border: none;
+}
+
+#footer-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100% !important;
+  font-size: 14px;
+  text-align: center;
+  padding: 6px;
+  background-color: $rgb-base-colour;
+  color: $text-colour;
+  outline: none;
+  margin-bottom: 0;
+  border: none;
+}
+
+.build-text {
+  color: $text-colour;
 }
