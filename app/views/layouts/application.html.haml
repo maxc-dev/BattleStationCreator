@@ -16,12 +16,12 @@
 
   %body{id: "body"}
 
-    = render 'shared/header'
+    = render 'shared/header' #renders the header into the file
 
     %div{class: 'content'}
       = yield
 
-    - if current_page?(controller: 'home', action: 'home')
+    - if current_page?(controller: 'home', action: 'home') #if it is the home page, render the START BUILDING footer, if not, render the standard footer
       = render 'shared/start_building'
     - else
       = render 'shared/footer'

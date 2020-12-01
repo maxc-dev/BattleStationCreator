@@ -1,11 +1,12 @@
-# frozen_string_literal: true
-
 class PartsController < ApplicationController
-  before_action :set_part, only: %i[show edit update destroy]
+  before_action :set_part, only: %i[edit update destroy]
 
   # GET /parts
   # GET /parts.json
   def index
+    # selects all the parts
+    # if the category_id param is set then filter by categories  of that id
+    # if the manufacturer_id param is set then filter by manufacturers of that id
     @parts = if params[:category_id].present? && params[:manufacturer_id].present?
                Part.all.where('category_id = ? & manufacturer_id = ?', params[:category_id], params[:manufacturer_id])
              elsif params[:category_id].present?
@@ -13,13 +14,9 @@ class PartsController < ApplicationController
              elsif params[:manufacturer_id].present?
                Part.all.where('manufacturer_id = ?', params[:manufacturer_id])
              else
-               Part.all
+               Part.all # no params set, return all parts
              end
   end
-
-  # GET /parts/1
-  # GET /parts/1.json
-  def show; end
 
   # GET /parts/new
   def new
@@ -71,10 +68,6 @@ class PartsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_part
-    @part = Part.find(params[:id])
-  end
 
   # Only allow a list of trusted parameters through.
   def part_params

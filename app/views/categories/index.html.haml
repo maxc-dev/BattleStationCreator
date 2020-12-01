@@ -1,21 +1,26 @@
 %h1 Computer Parts
 
+// progress bar which displays a percentage of how many parts have been selected to far for the build to be complete
 %div.w3-light-grey.w3-round-large.container-scroll
   %div.w3-container.w3-blue.w3-round-large{id: 'part-selection-bar', :style => "width:#{@progress}%;"}
     = "%d%%" % [@progress]
 
+// start of the card list layout design
 %div.container
   %div.layout-grid
+    //loops every category
     - @categories.each do |category|
       %div.child
+        //if a session variable of the category is available, render the part name selected for that category
         - if session[category.id].present?
-          - part = Part.find(session[category.id])
+          - part = Part.find(session[category.id]) #finds the part which is selected in the session variable
           = link_to parts_url(:category_id => category.id) do
             %div.centered-img-container
               %img{src: "/assets/products/#{part.name.downcase.gsub(' ', '-')}.jpg", image_alt: 'parts'}
           %h2= part.name
           %p= "£%d" % [part.price]
 
+          //else if the session variable is not set, give an option to select the part for that category which is not selected
         - else
           = link_to parts_url(:category_id => category.id) do
             %div.centered-img-container
