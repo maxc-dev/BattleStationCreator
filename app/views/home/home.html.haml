@@ -1,0 +1,18 @@
+%h1
+  Over 50 products to choose from!
+%h2
+  Take a look at our range:
+
+//Loops through every part and displays it in a column
+%div{class: 'row'}
+  - image_index = 0
+  //loop through each of the 4 columns first
+  - (0..3).each do
+    %div{class: 'column'}
+      //Loop through the indexes of the next @images_per_column parts
+      - (image_index..(image_index+@images_per_column-1)).each do |part_index|
+        //if the part is not null (exists) then print out the image to the home page
+        - if @parts[part_index].present?
+          - src = "/assets/products/#{@parts[part_index].name.downcase.gsub(' ', '-')}.jpg"
+          %img{:src => src, image_alt: 'part'}
+        - image_index += 1

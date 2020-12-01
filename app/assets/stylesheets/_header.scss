@@ -1,5 +1,7 @@
+//import global vars
 @import "vars";
 
+//responsive design for the header (navigation) texts
 @media screen and (max-width: 600px) {
   .header-nav-items {
     font-size: 20px !important;
@@ -18,11 +20,13 @@
   }
 }
 
+//formats header size
 .main {
   max-height: $header-size;
   line-height: $header-size;
 }
 
+//formats other header properties
 header {
   overflow: hidden;
   padding: 20px 10px;
@@ -33,6 +37,7 @@ header {
   align-items: center;
 }
 
+//formats the header and the buttons which navigate to other pages
 .header-distributed {
   background-color: $rgb-base-colour;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.13);

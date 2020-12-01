@@ -1,5 +1,7 @@
+//import global vars
 @import "vars";
 
+//responsive design for the footer texts
 @media only screen and (max-width: 600px) {
   .build-text {
     font-size: 48px !important;
@@ -12,6 +14,7 @@
   }
 }
 
+//css design styles for the footer
 footer {
   max-height: $footer-size;
   width: 100% !important;
@@ -22,6 +25,7 @@ footer {
   align-items: center;
 }
 
+//css design styles for the Start Building button on the home page footer
 #build-button {
   display: flex;
   justify-content: center !important;
@@ -37,6 +41,12 @@ footer {
   border: none;
 }
 
+.build-text {
+  font-size: 52px;
+  color: $text-colour;
+}
+
+//css for the main footer at the bottom of every other page
 #footer-main {
   display: flex;
   justify-content: center;
@@ -50,9 +60,4 @@ footer {
   outline: none;
   margin-bottom: 0;
   border: none;
-}
-
-.build-text {
-  font-size: 52px;
-  color: $text-colour;
 }

@@ -1,35 +1,36 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- */
+//importing bootstrap
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+//imports global css variables file
 @import "vars";
+
+//imports files that require separate scss
 @import "footer";
 @import "header";
+@import "home";
 
+//includes w3schools standards and google api font for 'Play'
 @import url('https://fonts.googleapis.com/css?family=Play');
 @import url('https://www.w3schools.com/w3css/4/w3.css');
 
-//Setting the font for all text to be Roboto from google apis
+//Setting the font for all text to be Play from google apis
+//Also removes text decoration and sets the default colour to the default colour in @vars
 * {
   font-family: "Play", sans-serif;
   color: $text-colour;
   text-decoration: none !important;
 }
 
+//formats the general page content (body) and in relation to the header
 body {
   background-color: $background;
+}
+
+h1, h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header {
@@ -82,8 +83,8 @@ body {
   background: $back-colour;
 }
 
+/* Responsive design to deal with card layouts */
 $card-width: 400px;
-
 @media only screen and (max-width: 1500px) {
   .layout-grid {
     grid-template-columns: repeat(2, $card-width) !important;
@@ -96,12 +97,7 @@ $card-width: 400px;
   }
 }
 
-h1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+/* Container layout for all card-style designs */
 .container {
   display: flex;
   justify-content: center;
@@ -118,6 +114,7 @@ h1 {
   margin-right: auto;
 }
 
+//actual child node of the card
 $shadow: 5px;
 .child {
   box-shadow: $shadow $shadow 4px rgba(0,0,0,0.2);
@@ -129,10 +126,12 @@ $shadow: 5px;
   padding: 10px;
 }
 
+//background changes when hovered for a child card
 .child:hover {
   background: $back-hover-colour;
 }
 
+//sets all images to a standard style
 img {
   border-radius: 8px;
   max-width: 380px;
@@ -141,11 +140,13 @@ img {
   max-height: 200px;
 }
 
+//dims certain images if there is text over it (eg "select" text)
 #dim-image {
   opacity: 0.2;
   transition: transform .5s;
 }
 
+//centers text over an image
 .centered-img-text {
   position: absolute;
   top: 50%;
@@ -160,6 +161,7 @@ img {
   cursor: pointer;
 }
 
+//scrollbar css that centers it
 .container-scroll {
   display: flex;
   justify-self: center;
