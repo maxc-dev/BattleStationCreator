@@ -34,6 +34,11 @@ en:
   app_description: "Customise your own battle station for free!"
   author: "Max Carter"
 
+  #home text
+  home:
+    title: "Over 50 products to choose from!"
+    subtitle: "Take a look at our range:"
+
   #header info
   _header:
     nav-parts: "Parts"
