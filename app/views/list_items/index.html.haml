@@ -1,0 +1,23 @@
+%h1 Listing list_items
+
+- if @list_items.length == 0
+  %h2 No part listings found!
+- else
+
+  %table
+    %thead
+      %tr
+        %th List
+        %th Part
+        %th
+        %th
+        %th
+
+    %tbody
+      - @list_items.each do |list_item|
+        %tr
+          %td= list_item.list
+          %td= list_item.part
+          %td= link_to 'Show', list_item
+          %td= link_to 'Edit', edit_list_item_path(list_item)
+          %td= link_to 'Destroy', list_item, method: :delete, data: { confirm: 'Are you sure?' }

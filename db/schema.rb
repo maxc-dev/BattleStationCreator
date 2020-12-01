@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_01_214052) do
+ActiveRecord::Schema.define(version: 2020_12_01_224350) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
@@ -19,6 +19,22 @@ ActiveRecord::Schema.define(version: 2020_12_01_214052) do
     t.boolean "compulsory", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "list_items", force: :cascade do |t|
+    t.integer "list_id", null: false
+    t.integer "part_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_list_items_on_list_id"
+    t.index ["part_id"], name: "index_list_items_on_part_id"
+  end
+
+  create_table "listings", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_listings_on_user_id"
   end
 
   create_table "manufacturers", force: :cascade do |t|

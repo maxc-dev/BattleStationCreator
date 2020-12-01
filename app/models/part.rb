@@ -7,4 +7,7 @@ class Part < ApplicationRecord
   validates :power, numericality: { greater_than_or_equal_to: 0 }
   validates :category_id, numericality: { greater_than_or_equal_to: 0 }
   validates :manufacturer_id, numericality: { greater_than_or_equal_to: 0 }
+
+  belongs_to :manufacturer
+  belongs_to :category
 end
