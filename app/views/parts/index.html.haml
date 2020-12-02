@@ -8,7 +8,7 @@
       %div.child
         //finds the manufacturer of the looped part
         - image = Category.where(['id = ?', part.category_id])[0].name.downcase
-        - manufacturer = Manufacturer.where(['id = ?', part.manufacturer_id + 1])[0].name
+        - manufacturer = Manufacturer.where(['id = ?', part.manufacturer_id])[0].name
         - part_img = part.name.downcase.gsub(' ', '-')
         = link_to categories_url(:selected_category_id => part.category_id, :selected_part_id => part.id) do
           %div.centered-img-container

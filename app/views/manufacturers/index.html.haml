@@ -4,7 +4,7 @@
   %div.layout-grid
     - @manufacturers.each do |manufacturer| #loops every manufacturer and lists it in a card design
       %div.child
-        = link_to parts_url(:manufacturer_id => manufacturer.id - 1) do #if a user clicks a manufacturer it will send them to the filtered part list
+        = link_to parts_url(:manufacturer_id => manufacturer.id) do #if a user clicks a manufacturer it will send them to the filtered part list
           %div.centered-img-container
             //display the manufacturer logo
             %img{src: "/assets/logos/logo-" + manufacturer.name.downcase.gsub(' ', '-') + ".jpg", image_alt: 'manufacturer'}
