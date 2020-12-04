@@ -1,20 +1,32 @@
+%p#notice= notice
+
 %h1
   =t('listings.your_listings')
 
-- if @listings.length == 0
+- unless current_user.present?
+  %div.container
+    %div.singular-layout-grid
+      %div.child
+        %h3
+          = t('listings.sign_in_to_see')
+        %h4
+          = link_to t('user.login'), new_user_session_path
+          = '|'
+          = link_to t('user.sign_up'), new_user_registration_path
+
+- if @listings.length == 0 && current_user.present?
   %h2
     =t('listings.no_listings')
 - else
+  %div.container
+    %div.layout-grid
+      - @listings.each do |listing|
+        %div.child
+          %h2
+            = "Listing##{listing.id.to_s}"
+            = " | Last Updated: " + listing.updated_at.strftime('%F')
 
-%div.container
-  %div.layout-grid
-    - @listings.each do |listing|
-      %div.child
-        %h2
-          = "Listing##{listing.id.to_s}"
-          = " | Last Updated: " + listing.updated_at.strftime('%F')
-
-        %h4
-          = link_to 'Show', listing
-          \|
-          = link_to 'Remove', listing, method: :delete, data: { confirm: 'Are you sure?' }
+          %h4
+            = link_to 'Show', listing
+            \|
+            = link_to 'Remove', listing, method: :delete

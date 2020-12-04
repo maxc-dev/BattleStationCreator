@@ -1,23 +1,22 @@
 %p#notice= notice
 
+//loops all the parts for the listing
 %div.container
   %div.layout-grid
     - @part_infos.each do |part_info|
       %div.child
-
         - part_img = part_info.part_name.downcase.gsub(' ', '-')
         %div.centered-img-container
           //if the image cannot be found it loads the categories's image, else it loads the part's image
           %img{:src => (FileTest.exist? Rails.root.join("app/assets/images/products/#{part_img}.jpg")) ? "/assets/products/#{part_img}.jpg" : "/assets/thumbnails/#{image}.jpg", image_alt: part_img, id: part_img}
 
+        //displays info about the part
         %h3
           = part_info.category_name
         %h2
           = part_info.manufacturer_name
           \-
           = part_info.part_name
-
-        = link_to 'Edit', edit_listing_path(@listing)
 
 //separate child card to allow saving of a listing
 %div.container

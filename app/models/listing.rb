@@ -4,7 +4,7 @@ class Listing < ApplicationRecord
 
   # associations
   belongs_to :user
-  has_many :list_items
+  has_many :list_items, dependent: :destroy
 
   # scope for only showing listings for as given user
   scope :user_listings, ->(user_id) { where(['user_id = ?', user_id]) }

@@ -58,6 +58,7 @@ en:
 
   listings:
     your_listings: 'Your Part Listings'
+    sign_in_to_see: 'Sign in to view listings'
     no_listings: 'No part listings found'
 
   user:
