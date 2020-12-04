@@ -12,7 +12,7 @@
         - part_img = part.name.downcase.gsub(' ', '-')
         = link_to categories_url(:selected_category_id => part.category_id, :selected_part_id => part.id) do
           %div.centered-img-container
-            //if the image cannot be found it loads the manufacturer's image, else it loads the part's image
+            //if the image cannot be found it loads the categories's image, else it loads the part's image
             %img{:src => (FileTest.exist? Rails.root.join("app/assets/images/products/#{part_img}.jpg")) ? "/assets/products/#{part_img}.jpg" : "/assets/thumbnails/#{image}.jpg", image_alt: part_img, id: part_img}
         //lists the manufacturer, part name and price
         %h2= "#{manufacturer} - #{part.name}"

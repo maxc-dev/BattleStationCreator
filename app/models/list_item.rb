@@ -1,6 +1,6 @@
 class ListItem < ApplicationRecord
-  belongs_to :list
+  belongs_to :listing
   belongs_to :part
 
-  scope :list_parts, ->(list) { where(['list_id = ?', list.id]) }
+  scope :list_parts, ->(list_id) { where(['list_id = ?', list_id]) }
 end

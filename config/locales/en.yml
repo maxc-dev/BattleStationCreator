@@ -45,8 +45,22 @@ en:
     nav-customise: "Customise"
     nav-manufacturers: "Manufacturers"
     nav-gallery: "Gallery"
+    nav-listings: "Listings"
     nav-support: "Support"
 
   #footer info
   _footer:
     start-building: "Start Building"
+
+  categories:
+    save_part_list: 'Save Part List'
+    sign_in_to_save: "Sign in to Save List"
+
+  listings:
+    your_listings: 'Your Part Listings'
+    no_listings: 'No part listings found'
+
+  user:
+    login: "Login"
+    sign_up: "Sign up"
+    sign_in: "Sign in"

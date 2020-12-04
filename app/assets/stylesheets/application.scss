@@ -114,6 +114,11 @@ $card-width: 400px;
   margin-right: auto;
 }
 
+.singular-layout-grid {
+  @extend .layout-grid;
+  grid-template-columns: $card-width;
+}
+
 //actual child node of the card
 $shadow: 5px;
 .child {
@@ -129,6 +134,11 @@ $shadow: 5px;
 //background changes when hovered for a child card
 .child:hover {
   background: $back-hover-colour;
+}
+
+.clickable-child {
+  @extend .child;
+  cursor: pointer;
 }
 
 //sets all images to a standard style

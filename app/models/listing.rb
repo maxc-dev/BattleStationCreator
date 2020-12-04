@@ -7,5 +7,5 @@ class Listing < ApplicationRecord
   has_many :list_items
 
   # scope for only showing listings for as given user
-  scope :user_listings, ->(user) { where(['user_id = ?', user.id]) }
+  scope :user_listings, ->(user_id) { where(['user_id = ?', user_id]) }
 end

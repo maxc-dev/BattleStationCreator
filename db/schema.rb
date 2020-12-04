@@ -22,11 +22,11 @@ ActiveRecord::Schema.define(version: 2020_12_01_224350) do
   end
 
   create_table "list_items", force: :cascade do |t|
-    t.integer "list_id", null: false
+    t.integer "listing_id", null: false
     t.integer "part_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["list_id"], name: "index_list_items_on_list_id"
+    t.index ["listing_id"], name: "index_list_items_on_listing_id"
     t.index ["part_id"], name: "index_list_items_on_part_id"
   end
 

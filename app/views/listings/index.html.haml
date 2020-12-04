@@ -1,18 +1,20 @@
-%h1 Your Part Listings!
+%h1
+  =t('listings.your_listings')
 
 - if @listings.length == 0
-  %h2 No part listings found!
+  %h2
+    =t('listings.no_listings')
 - else
-  %table
-    %thead
-      %tr
-        %th
-        %th
-        %th
 
-    %tbody
-      - @listings.each do |listing|
-        %tr
-          %td= link_to 'Show', listing
-          %td= link_to 'Edit', edit_listing_path(listing)
-          %td= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }
+%div.container
+  %div.layout-grid
+    - @listings.each do |listing|
+      %div.child
+        %h2
+          = "Listing##{listing.id.to_s}"
+          = " | Last Updated: " + listing.updated_at.strftime('%F')
+
+        %h4
+          = link_to 'Show', listing
+          \|
+          = link_to 'Remove', listing, method: :delete, data: { confirm: 'Are you sure?' }

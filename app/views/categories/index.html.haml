@@ -29,3 +29,22 @@
                 Select
           %h2= category.name
           %p= category.description
+
+
+//separate child card to allow saving of a listing
+%div.container
+  %div.singular-layout-grid
+    //if the user is signed in they can click the node to save the list
+    - if user_signed_in?
+      = link_to listings_url(:save_list => true) do
+        %div.clickable-child
+          %h2
+            = t('categories.save_part_list')
+    - else  # if the user is not signed in then prompt them to sign in
+      %div.child
+        %h3
+          = t('categories.sign_in_to_save')
+        %h4
+          = link_to t('user.login'), new_user_session_path
+          = '|'
+          = link_to t('user.sign_up'), new_user_registration_path
