@@ -1,8 +1,7 @@
-%p#notice= notice
-
 %h1
   =t('listings.your_listings')
 
+//if user is not signed in, tell them to sign in to view their listings
 - unless current_user.present?
   %div.container
     %div.singular-layout-grid
@@ -14,16 +13,17 @@
           = '|'
           = link_to t('user.sign_up'), new_user_registration_path
 
+//if the user is signed in but no listing, display no listings message
 - if @listings.length == 0 && current_user.present?
   %h2
     =t('listings.no_listings')
-- else
+- else #if the user has listings, list them
   %div.container
     %div.layout-grid
       - @listings.each do |listing|
         %div.child
           %h2
-            = "Listing##{listing.id.to_s}"
+            = "Listing##{listing.id.to_s}" #display the listing ID and when it was last updated
             = " | Last Updated: " + listing.updated_at.strftime('%F')
 
           %h4

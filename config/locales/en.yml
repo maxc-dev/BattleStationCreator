@@ -56,10 +56,15 @@ en:
     save_part_list: 'Save Part List'
     sign_in_to_save: "Sign in to Save List"
 
+  warnings:
+    title: "WARNING!"
+    insufficient_power: "Your power supply unit is insufficient for the parts selected!"
+
   listings:
     your_listings: 'Your Part Listings'
     sign_in_to_see: 'Sign in to view listings'
     no_listings: 'No part listings found'
+    view_listings: "View More Listings"
 
   user:
     login: "Login"

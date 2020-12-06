@@ -141,6 +141,15 @@ $shadow: 5px;
   cursor: pointer;
 }
 
+.warning-child {
+  @extend .child;
+  background: $back-colour-warning !important;
+}
+
+.warning-child:hover {
+  background: $back-colour-warning-hover !important;
+}
+
 //sets all images to a standard style
 img {
   border-radius: 8px;

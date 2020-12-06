@@ -10,9 +10,7 @@ class ListingsController < ApplicationController
       # a new part list can be created
       session_empty = true
       (1..10).each do |index|
-        if session[index].present?
-          session_empty = false
-        end
+        session_empty = false if session[index].present?
       end
       # if the session variables for parts are not empty create a new part listing
       unless session_empty
@@ -21,13 +19,13 @@ class ListingsController < ApplicationController
         if new_listing.save
           # loop part sessions, if it exists create a list item and associate it to the listing
           (1..10).each do |index|
-            if session[index].present?
-              listing_line_item = ListItem.new(listing_id: new_listing.id, part_id: session[index])
-              if listing_line_item.save
-                session.delete(index)
-              else
-                new_listing.destroy
-              end
+            next unless session[index].present?
+
+            listing_line_item = ListItem.new(listing_id: new_listing.id, part_id: session[index])
+            if listing_line_item.save
+              session.delete(index)
+            else
+              new_listing.destroy
             end
           end
         end
@@ -46,13 +44,22 @@ class ListingsController < ApplicationController
   # GET /listings/1.json
   def show
     @part_infos = ListItem.find_by_sql([
-      'select parts.name as part_name, categories.name as category_name, manufacturers.name as manufacturer_name from list_items
+      'select parts.name as part_name,
+      categories.name as category_name,
+      manufacturers.name as manufacturer_name from list_items
       inner join parts on list_items.part_id = parts.id
       inner join categories on parts.category_id = categories.id
       inner join manufacturers on parts.manufacturer_id = manufacturers.id
-       where listing_id = ?',
-      @listing.id]
-    )
+      where listing_id = ?',
+      @listing.id
+    ])
+
+    @power = ListItem.find_by_sql([
+     'select sum(parts.power) as power_consumption from list_items
+      inner join parts on list_items.part_id = parts.id
+      where listing_id = ?',
+      @listing.id
+    ])
   end
 
   # DELETE /listings/1

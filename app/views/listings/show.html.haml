@@ -1,4 +1,16 @@
-%p#notice= notice
+%h1
+  = "Listing ##{@listing.id}"
+
+//if the power consumption of all parts is imbalanced, present warning
+- if @power.first.power_consumption >= 0
+  %div.container
+    %div.singular-layout-grid
+      %div.warning-child
+        %h2
+          = t('warnings.title')
+        %p
+          = t('warnings.insufficient_power')
+
 
 //loops all the parts for the listing
 %div.container
@@ -24,4 +36,4 @@
     = link_to listings_path do
       %div.clickable-child
         %h2
-          Back
+          = t('listings.view_listings')
