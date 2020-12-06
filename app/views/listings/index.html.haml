@@ -2,16 +2,7 @@
   =t('listings.your_listings')
 
 //if user is not signed in, tell them to sign in to view their listings
-- unless current_user.present?
-  %div.container
-    %div.singular-layout-grid
-      %div.child
-        %h3
-          = t('listings.sign_in_to_see')
-        %h4
-          = link_to t('user.login'), new_user_session_path
-          = '|'
-          = link_to t('user.sign_up'), new_user_registration_path
+= render 'shared/prompt_signin'
 
 //if the user is signed in but no listing, display no listings message
 - if @listings.length == 0 && current_user.present?
@@ -29,4 +20,4 @@
           %h4
             = link_to 'Show', listing
             \|
-            = link_to 'Remove', listing, method: :delete
+            = link_to 'Remove', listing, method: :delete, data: { remote: true  }

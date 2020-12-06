@@ -1,0 +1,26 @@
+//verifies user is signed in
+- if current_user.present?
+  //header with contact support ticket id
+  %h1
+    = "Customer Support Ticket (##{@contact.id})"
+  %div.container
+    %div.singular-layout-grid
+      %div.child
+        //info about the ticket (title and body)
+        %h3
+          = @contact.title
+        %br
+        %p
+          = @contact.body
+
+      //links to edit the ticket, and to go back
+      = link_to edit_contact_path(@contact) do
+        %div.clickable-child
+          %h2
+            = t('contact.edit_ticket')
+      = link_to contacts_path do
+        %div.clickable-child
+          %h2
+            = t('contact.contact_history')
+- else
+  = render 'shared/prompt_signin'

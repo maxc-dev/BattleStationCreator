@@ -1,0 +1,31 @@
+@import "vars";
+
+input[type=text] {
+  width: 100%;
+  padding: 1px 2px;
+  box-sizing: border-box;
+  border: none;
+  background: $back-colour;
+  border-bottom: 2px solid $rgb-base-colour;
+  resize: none;
+  min-height: auto;
+  text-decoration: none;
+}
+
+textarea {
+  @extend input[type=text];
+  min-height: 200px;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: $background;
+  border: none;
+  padding: 16px 32px;
+  margin: 4px 2px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+textarea:hover {
+  background: $back-hover-colour;
+}

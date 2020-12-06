@@ -9,6 +9,7 @@
 @import "footer";
 @import "header";
 @import "home";
+@import "contacts";
 
 //includes w3schools standards and google api font for 'Play'
 @import url('https://fonts.googleapis.com/css?family=Play');
@@ -20,6 +21,7 @@
   font-family: "Play", sans-serif;
   color: $text-colour;
   text-decoration: none !important;
+  outline: none;
 }
 
 //formats the general page content (body) and in relation to the header

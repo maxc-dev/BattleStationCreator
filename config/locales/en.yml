@@ -46,7 +46,7 @@ en:
     nav-manufacturers: "Manufacturers"
     nav-gallery: "Gallery"
     nav-listings: "Listings"
-    nav-support: "Support"
+    nav-support: "Contact"
 
   #footer info
   _footer:
@@ -62,7 +62,6 @@ en:
 
   listings:
     your_listings: 'Your Part Listings'
-    sign_in_to_see: 'Sign in to view listings'
     no_listings: 'No part listings found'
     view_listings: "View More Listings"
     list_info: "Listing Information"
@@ -71,7 +70,17 @@ en:
       power: "Power Consumption"
       stats: "Statistics"
 
+  contact:
+    contact_support: "Contact Support"
+    no_contact: "You have not yet contacted support!"
+    create_contact: "Contact Support"
+    contact_history: "View Support History"
+    submit_form: "Submit Support Ticket"
+    edit_ticket: "Edit Support Ticket"
+    view_ticket: "View Ticket"
+
   user:
     login: "Login"
     sign_up: "Sign up"
     sign_in: "Sign in"
+    sign_in_to_see: 'Sign in to view action'

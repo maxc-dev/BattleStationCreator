@@ -1,0 +1,28 @@
+%h1
+  = t('contact.contact_support')
+
+  //if user has contacted support and is logged in, show messages
+- if current_user.present?
+  %div.container
+    %div.layout-grid
+      - @contacts.each do |contact|
+        %div.child
+          %h2
+            = contact.title
+          %h4
+            = link_to 'Show', contact
+            \|
+            = link_to 'Edit', edit_contact_path(contact)
+            \|
+            = link_to 'Remove', contact, method: :delete, data: { remote: true }
+
+  %div.container
+    %div.singular-layout-grid
+      = link_to new_contact_path do
+        %div.clickable-child
+          %h2
+            = t('contact.create_contact')
+- else
+  //requires user to sign in to see the contacts
+  = render 'shared/prompt_signin'
+
