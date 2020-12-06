@@ -54,8 +54,11 @@ class ListingsController < ApplicationController
       @listing.id
     ])
 
-    @power = ListItem.find_by_sql([
-     'select sum(parts.power) as power_consumption from list_items
+    @listing_metadata = ListItem.find_by_sql([
+     'select sum(parts.power) as power_consumption,
+      sum(parts.price) as total_cost,
+      count(distinct parts.category_id) as categories_count,
+      count(distinct parts.manufacturer_id) as manufacturers_count from list_items
       inner join parts on list_items.part_id = parts.id
       where listing_id = ?',
       @listing.id

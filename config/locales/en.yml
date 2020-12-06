@@ -65,6 +65,11 @@ en:
     sign_in_to_see: 'Sign in to view listings'
     no_listings: 'No part listings found'
     view_listings: "View More Listings"
+    list_info: "Listing Information"
+    categories:
+      price: "Price"
+      power: "Power Consumption"
+      stats: "Statistics"
 
   user:
     login: "Login"

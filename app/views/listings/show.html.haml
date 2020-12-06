@@ -2,7 +2,7 @@
   = "Listing ##{@listing.id}"
 
 //if the power consumption of all parts is imbalanced, present warning
-- if @power.first.power_consumption >= 0
+- if @listing_metadata.first.power_consumption > 0
   %div.container
     %div.singular-layout-grid
       %div.warning-child
@@ -30,6 +30,38 @@
           \-
           = part_info.part_name
 
+//lists metadata about the listing
+%h1
+  = t('listings.list_info')
+
+%div.container
+  %div.layout-grid
+    %div.child
+      //price of the listing
+      %h1
+        = t('listings.categories.price')
+      %p
+        = "£#{@listing_metadata.first.total_cost.round}"
+    %div.child
+      //power consumption data
+      %h1
+        = t('listings.categories.power')
+      - if @listing_metadata.first.power_consumption < 0
+        %p
+          = "Spare Power Consumption: #{abs(@listing_metadata.first.power_consumption)}"
+      - else
+        %p
+          = "Excess Power Consumption: #{@listing_metadata.first.power_consumption}"
+    %div.child
+      //stats about different manufacturers or parts selected
+      %h1
+        = t('listings.categories.stats')
+      %p
+        = "Part Count: #{@listing_metadata.first.categories_count}"
+      %p
+        = "Manufacturer Count: #{@listing_metadata.first.manufacturers_count}"
+
+%br
 //separate child card to allow saving of a listing
 %div.container
   %div.singular-layout-grid
