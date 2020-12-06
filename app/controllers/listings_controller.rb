@@ -1,5 +1,12 @@
 class ListingsController < ApplicationController
+  before_action :redriect_not_signed_in, only: %i[show edit update destroy]
   before_action :set_listing, only: %i[show edit update destroy]
+
+  def redriect_not_signed_in
+    unless current_user.present?
+      redirect_to new_user_session_path
+    end
+  end
 
   # GET /listings
   # GET /listings.json
