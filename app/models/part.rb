@@ -7,4 +7,10 @@ class Part < ApplicationRecord
 
   belongs_to :manufacturer
   belongs_to :category
+
+  # scope for only showing listings for as given user
+  scope :category_filter, ->(category_id) { where(['category_id = ?', category_id]) }
+  scope :manufacturer_filter, ->(manufacturer_id) { where(['manufacturer_id = ?', manufacturer_id]) }
+  scope :category_manufacturer_filter,
+        ->(category_id, manufacturer_id){ where(['category_id = ? and manufacturer_id = ?', category_id, manufacturer_id]) }
 end
