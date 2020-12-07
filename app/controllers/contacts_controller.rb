@@ -1,9 +1,10 @@
 class ContactsController < ApplicationController
-  before_action :redriect_not_signed_in, only: %i[show edit update destroy]
   before_action :set_contact, only: %i[show edit update destroy]
+  before_action :redriect_not_signed_in, only: %i[show edit update destroy]
 
+  # prevents unlogged or wrong users from accessing content that isnt theres
   def redriect_not_signed_in
-    unless current_user.present?
+    if !current_user.present? || current_user.id != @contact.user_id
       redirect_to new_user_session_path
     end
   end

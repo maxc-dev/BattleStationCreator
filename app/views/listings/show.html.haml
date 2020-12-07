@@ -48,7 +48,7 @@
         = t('listings.categories.power')
       - if @listing_metadata.first.power_consumption < 0
         %p
-          = "Spare Power Consumption: #{abs(@listing_metadata.first.power_consumption)}"
+          = "Spare Power Consumption: #{(@listing_metadata.first.power_consumption).abs}"
       - else
         %p
           = "Excess Power Consumption: #{@listing_metadata.first.power_consumption}"
