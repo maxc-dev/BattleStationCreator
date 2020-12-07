@@ -13,7 +13,7 @@ input[type=text] {
 }
 
 textarea {
-  @extend input[type=text];
+  @extend input, [type=text];
   min-height: 200px;
 }
 
