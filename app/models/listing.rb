@@ -1,6 +1,6 @@
 class Listing < ApplicationRecord
   # validates that the user is set and is valid
-  validates :user_id, presence: true
+  validates :user_id, presence: true, null: false
 
   # associations
   belongs_to :user

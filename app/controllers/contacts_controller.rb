@@ -19,10 +19,6 @@ class ContactsController < ApplicationController
                 end
   end
 
-  # GET /contacts/1
-  # GET /contacts/1.json
-  def show; end
-
   # GET /contacts/new
   def new
     if current_user.present?
@@ -31,10 +27,6 @@ class ContactsController < ApplicationController
     else
       redirect_to new_user_session_path
     end
-  end
-
-  # GET /contacts/1/edit
-  def edit;
   end
 
   # POST /contacts

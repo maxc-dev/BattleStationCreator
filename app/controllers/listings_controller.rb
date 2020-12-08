@@ -90,4 +90,9 @@ class ListingsController < ApplicationController
   def set_listing
     @listing = Listing.find(params[:id])
   end
+
+  # restrict params allowed
+  def listing_params
+    params.permit(:save_list)
+  end
 end

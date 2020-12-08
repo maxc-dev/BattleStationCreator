@@ -15,4 +15,9 @@ class PartsController < ApplicationController
                Part.all # no params set, return all parts
              end
   end
+
+  # restrict params allowed
+  def listing_params
+    params.permit(:category_id, :manufacturer_id)
+  end
 end
