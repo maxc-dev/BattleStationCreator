@@ -1,8 +1,8 @@
 class Contact < ApplicationRecord
   # validates that the user is set and is valid
-  validates :user_id, presence: true
-  validates :title, presence: true
-  validates :body, presence: true
+  validates :user_id, presence: true, null: false
+  validates :title, presence: true, null: false
+  validates :body, presence: true, null: false
 
   # associations
   belongs_to :user
