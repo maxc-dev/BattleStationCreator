@@ -4,16 +4,13 @@
 %div.container
   %div.layout-grid
     //loop every part available
-    - @parts.each do |part|
+    - @part_infos.each do |part|
       %div.child
-        //finds the manufacturer of the looped part
-        - image = Category.where(['id = ?', part.category_id])[0].name.downcase
-        - manufacturer = Manufacturer.where(['id = ?', part.manufacturer_id])[0].name
         - part_img = part.name.downcase.gsub(' ', '-')
         = link_to categories_url(:selected_category_id => part.category_id, :selected_part_id => part.id) do
           %div.centered-img-container
             //if the image cannot be found it loads the categories's image, else it loads the part's image
-            %img{:src => (FileTest.exist? Rails.root.join("app/assets/images/products/#{part_img}.jpg")) ? "/assets/products/#{part_img}.jpg" : "/assets/thumbnails/#{image}.jpg", image_alt: part_img, id: part_img}
+            %img{:src => (FileTest.exist? Rails.root.join("app/assets/images/products/#{part_img}.jpg")) ? "/assets/products/#{part_img}.jpg" : "/assets/thumbnails/#{part.category_name.downcase}.jpg", image_alt: part_img, id: part_img}
         //lists the manufacturer, part name and price
-        %h2= "#{manufacturer} - #{part.name}"
+        %h2= "#{part.manufacturer_name} - #{part.name}"
         %h4= "£%d" % [part.price]
