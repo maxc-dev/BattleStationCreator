@@ -1,7 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+nvidia:
+  name: NVIDIA
 
-two:
-  name: MyString
+amd:
+  name: AMD
+
+intel:
+  name: Intel

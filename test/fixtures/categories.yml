@@ -1,13 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  abbrv: MyString
-  string: MyString
-  description: MyText
+cpu:
+  name: Processor
+  abbrv: CPU
+  description: The brain of the computer that does all the calculations.
 
-two:
-  name: MyString
-  abbrv: MyString
-  string: MyString
-  description: MyText
+gpu:
+  name: Graphics Card
+  abbrv: GPU
+  description: Processes the graphics and outputs it on your display.
+
+ram:
+  name: Memory
+  abbrv: RAM
+  description: Holds random data which the computer needs to perform calculations.
