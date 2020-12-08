@@ -40,7 +40,7 @@ class ContactsController < ApplicationController
     end
     respond_to do |format|
       if @contact.save
-        NewContactMailer.with(user: current_user).contact_confirm_email.deliver_now
+        NewContactMailer.contact_confirm_email(current_user).deliver_now
         format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
         format.json { render :show, status: :created, location: @contact }
       else
